@@ -10,7 +10,7 @@ describe("Kyma end to end upgrade tests", function () {
   this.timeout(10 * 60 * 1000);
   this.slow(5000);
   const testNamespace = "test"
-  const skipComponents = ["dex","tracing","monitoring","console","kiali","logging"];
+  const skipComponents = ["dex","tracing","monitoring","console","kiali","logging","helm-broker"];
 
   it(`Install Kyma ${kymaVersion}`, async function () {
     const resourcesPath = await installer.downloadCharts({ source: kymaVersion })
