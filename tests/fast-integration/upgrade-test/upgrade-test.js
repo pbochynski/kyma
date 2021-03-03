@@ -32,7 +32,7 @@ describe("Kyma end to end upgrade tests", function () {
   });
 
   it("Kyma should be upgraded to Kyma 2.0 (master branch)", async function () {
-    await installer.installKyma({isUpgrade: true, skipComponents, newEventing: true});    
+    await installer.installKyma({isUpgrade: true, components: ["eventing","application-connector"], newEventing: true});    
   })
 
   it("function should reach Commerce mock API through app gateway after upgrade", async function () {
